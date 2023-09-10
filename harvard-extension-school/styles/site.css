@@ -1,0 +1,308 @@
+/* ----------------------------------------------------------------------------
+                              Boilerplate Website Style
+---------------------------------------------------------------------------- */
+* {
+   margin: 0;
+   padding: 0;
+}
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+html {
+   box-sizing: border-box;
+   /* 1rem = 10pt, 1.6rem = 16pt, 7.2rem = 72pt */
+   font-size: 62.5%;
+   scroll-behavior: smooth;
+}
+
+/* ----------------------------------------------------------------------------
+                              Website-wide exclusive
+---------------------------------------------------------------------------- */
+:root {
+   /* Footer */
+   --rich-black: #020203;
+   --steel-blue: #4d84c4;
+   --crimson: #a51c30;
+   /* Student Success Stories */
+   --cultured: #f5f5f8; 
+   --platinum: #ebebeb;
+}
+body {
+   font-family: Roboto, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+.explore a {
+   font-family: 'Roboto Condensed', Arial, sans-serif;
+}
+ul {
+   list-style: none;
+}
+a {
+   text-decoration: none;
+}
+
+/* ----------------------------------------------------------------------------
+                                    Grids
+---------------------------------------------------------------------------- */
+body.gridcontainer {
+   display: grid;
+   grid-template-columns: auto;
+   grid-template-areas:
+   "header"
+   "explore"
+   "studentsuccess"
+   "footer";
+}
+header {
+   grid-area: header;
+}
+.explore {
+   grid-area: explore;
+}
+.studentsuccess {
+   grid-area: studentsuccess;
+}
+footer {
+   grid-area: footer;
+}
+header.gridcontainer {
+   display: grid;
+   grid-template-columns: 33% auto auto;
+   grid-template-areas:
+   "banner banner banner"
+   "wordmark nav2 nav2"
+   "wordmark nav1 nav1";
+}
+.banner {
+   grid-area: banner;
+}
+.wordmark {
+   grid-area: wordmark;
+}
+nav.secondary {
+   grid-area: nav2;
+}
+nav.primary {
+   grid-area: nav1;
+}
+
+/* ----------------------------------------------------------------------------
+                              Styles for header
+---------------------------------------------------------------------------- */
+header nav ul {
+   align-items: center;
+   height: 100%;
+   display: flex;
+   justify-content: right;
+   padding-right: 1rem;
+}
+header a {
+   font-size: 1.6rem;
+   font-weight: 900;
+}
+.banner {
+   background-color: var(--crimson);
+   color: white;
+   padding: 0.5em;
+   font-variant: small-caps;
+   font-size: 2rem;
+   font-weight: 500;
+   margin-bottom: 0.33em;
+}
+.wordmark {
+   padding-left: 1em;
+}
+
+/* ----------------------------------------------------------------------------
+                        Styles for header primary nav
+---------------------------------------------------------------------------- */
+.primary a {
+   color: black;
+}
+.primary li {
+   padding: 0 1.4em;
+}
+.primary li:not(:last-child, :first-child) {
+   border-left: 2px solid black;
+}
+.getinfo {
+   background-color: var(--crimson);
+   padding: 1.2rem !important;
+}
+.getinfo a {
+   color: white;
+}
+
+/* ----------------------------------------------------------------------------
+                        Styles for header secondary nav
+---------------------------------------------------------------------------- */
+.secondary {
+   margin-bottom: 1rem;
+}
+.secondary a {
+   color: var(--steel-blue);
+}
+.login {
+   border: 3px solid var(--steel-blue);
+   padding: 1rem !important;
+}
+.secondary li {
+   padding: 0 1.3em;
+}
+
+/* ----------------------------------------------------------------------------
+                              Styles for "Explore"
+---------------------------------------------------------------------------- */
+.explore h1 {
+   text-align: center;
+   padding: .7em 0 7rem;
+   font-size: 5.5rem;
+   color: white;
+   text-shadow: 3px 3px 3px rgb(29, 29, 29);
+}
+.explore {
+   background-image: url('../images/campus_bridge_river.jpg');
+   background-size: cover;
+   margin-top: 1rem;
+
+}
+.sections {
+   display: grid;
+   grid-template-columns: repeat(3, 27rem);
+   gap: 3rem;
+   padding: 0 4rem 5rem;
+   justify-content: center;
+}
+.sections h2 {
+   font-size: 3rem;
+   border-top: .1em solid var(--platinum);
+   padding: 1rem;
+   line-height: 1em;
+   background-color: white;
+}
+.sections li:first-child {
+   padding-top: 2rem;
+}
+.sections li:last-child {
+   padding-bottom: 2rem;
+}
+.sections li {
+   padding: .2em 1em;
+}
+.sections a {
+   font-size: 1.6rem;
+   color: var(--crimson);
+   font-weight: 900;
+}
+.sections section {
+   border-top: 5px solid var(--crimson);
+   background-color: var(--platinum);
+}
+.sections li::after {
+   padding-left: 1.5rem;
+   content: url('../images/arrow-right.svg');
+}
+
+/* ----------------------------------------------------------------------------
+                        Styles for "Student Success"
+---------------------------------------------------------------------------- */
+.studentsuccess {
+   background-color: var(--cultured);
+}
+.studentsuccess h2 {
+   text-align: center;
+   font-size: 4.0rem;
+   padding: 1em 0 .75em;
+}
+.studentsuccess > p {
+   text-align: left;
+   font-size: 1.6rem;
+   font-weight: 500;
+   margin-bottom: 1em;
+   padding: 0 16rem;
+}
+.articles {
+   display: flex;
+   justify-content: space-evenly;
+   padding-bottom: 1.5rem;
+}
+.articles article {
+   flex-basis: 30%;
+   display: flex;
+   flex-direction: column;
+   background-color: white;
+   padding: 1.5rem;
+}
+.articles img {
+   width: 100%;
+   max-width: 360px;
+   align-self: center;
+}
+article h3 {
+   font-size: 2rem;
+   padding: 2rem 0;
+}
+article li,
+article p {
+   font-size: 1.6rem;
+   font-weight: 500;
+}
+article p {
+   padding: 1rem 0 2rem;
+}
+article li:first-child {
+   list-style-image: url('../images/mortar-board.svg');
+}
+article li:last-child {
+   list-style-image: url('../images/map-marker.svg');
+}
+article li {
+   margin-left: 3.2rem;
+   padding-bottom: 1rem;
+}
+
+/* ----------------------------------------------------------------------------
+                              Styles for Footer
+---------------------------------------------------------------------------- */
+footer {
+   background-color: var(--rich-black);
+   color: white;
+   padding: 2rem 1rem 3rem;
+}
+footer a {
+   color: white;
+}
+.contactplus ul,
+.privacyplus ul {
+   display: flex;
+   justify-content: left;
+   align-items: center;
+}
+.privacyplus li {
+   padding: 0 0.5rem;
+}
+footer a,
+footer p {
+   font-size: 1.6rem;
+}
+.contactplus a {
+   font-weight: bold;
+   padding-right: 3rem;
+}
+.privacyplus li:not(:last-child) {
+   border-right: 1px solid white;
+}
+footer p {
+   padding: 2.5rem 0.5rem 1.5rem;
+}
+.contactplus {
+   padding-left: 0.5rem;
+}
